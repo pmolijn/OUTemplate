@@ -1,0 +1,31 @@
+\chapter{Summary}
+\ifpdf
+    \graphicspath{{Summary/Figs/Raster/}{Summary/Figs/PDF/}{Summary/Figs/}}
+\else
+    \graphicspath{{Summary/Figs/Vector/}{Summary/Figs/}}
+\fi
+
+\glsreset{MLA}
+The popularity of \gls{p2p} applications, and consequently the P2P traffic on the internet, has increased in the last years.
+This increase in traffic usage of P2P applications is besides benign P2P applications also due to malicious P2P software such as P2P botnets.
+To cope with the increasing threats imposed by malicious P2P botnets, botnets should be combated actively. A first step is to  detect which internet traffic originates from P2P \glspl{botnet}.
+In this research, a start has been made by looking at whether internet traffic can be classified as either P2P traffic or non-P2P traffic, yet regardless of whether it concerns benign or malicious traffic.\\
+
+\noindent
+Classification of P2P traffic is challenging since traditional techniques, that mainly analyze port numbers or payload data, are becoming ineffective against applications that use random ports or encryption.
+This research proposes, based on literature study, \gls{ML} as a method for P2P traffic classification, using the algorithms J48, REPTree and AdaBoost for analysis of statistical flow features, which are both port and payload agnostic.\\
+
+\noindent
+The classifier is trained with a data set consisting of network traffic derived from four P2P applications, two P2P botnets and non-P2P traffic.
+Classifier metrics were obtained by utilizing test data sets, in such a way that each individual set is disjunct with all the other sets(including training set). 
+The results of this quantitative empirical research show that the proposed method can achieve high accuracy, outperforming comparable existing approaches for classification of P2P traffic.
+\\
+
+\noindent
+The data sets and some source codes used in the thesis will be made available to the research
+community to enable validation and extension of the work.
+
+\vspace{2cm}
+
+\noindent
+\textbf{Keywords: P2P traffic, port agnostic, payload agnostic, classification, Machine learning}

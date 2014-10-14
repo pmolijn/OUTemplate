@@ -1,0 +1,133 @@
+\documentclass{ou-report}
+
+\hypersetup{
+pdfsubject={Master Thesis Software Engineering, P. J. Molijn},
+pdfkeywords={P2P traffic, port agnostic, payload agnostic, classification, Machine learning}
+}
+
+\usepackage[toc, nonumberlist, seeautonumberlist, acronym]{glossaries}
+\usepackage{glossary-mcols}
+
+%% Reset first use of glossary at each Chapter begin.
+\titleformat{\chapter}[display]
+    {\flushright\titlestyle}
+    {\fontsize{96pt}{96pt}\selectfont\bfseries\thechapter}
+    {0pt}
+    {\Huge\color{title}}[\glsresetall]
+
+\addbibresource{report.bib}
+
+\DeclareCiteCommand{\citeauthor}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexnames{labelname}}
+     {}%
+   \printtext[bibhyperref]{\printnames{labelname}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\makeglossaries
+
+\usepackage{enumitem}
+\usepackage[titletoc]{appendix}
+
+%Source listings support
+\usepackage{listings}
+
+
+%Algorithm support
+\usepackage{algorithm}% http://ctan.org/pkg/algorithms
+\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+%\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+
+%nicer tableformatting when drawing lines within tables
+\usepackage{bigstrut}
+
+\begin{document}
+
+%% Use Roman numerals for the page numbers of the title pages and table of
+%% contents.
+\frontmatter
+
+\title[A both port and payload agnostic approach]{P2P network classification}
+\author{P.\ J.\ Molijn}
+\affiliation{
+\begin{tabular}{ll}
+Student: & 851437445 \\
+Date: & 9/9/2014 \\
+\end{tabular}
+}
+\coverimage{cover.jpg}
+\makecover[frontboxwidth=4.6in]
+
+%% Include an optional title page.
+\input{title}
+
+\input{glossary}
+
+\let\cleardoublepage\clearpage
+
+% Optional Dedication, Acknowledgement
+\input{dedication}
+\input{acknowledgement}
+
+\tableofcontents
+
+\listoffigures
+
+\listoftables
+
+%% Include an optional summary page.
+\input{Summary/summary}
+\input{Summary/samenvatting}
+
+%% Use Arabic numerals for the page numbers of the chapters.
+\mainmatter
+
+\input{Chapter1/chapter-1}
+
+\input{Chapter2/chapter-2}
+
+%\input{Chapter3/chapter-3}
+
+%\input{Chapter4/chapter-4}
+
+%\input{Chapter5/chapter-5}
+
+%\input{Chapter6/chapter-6}
+
+%% Use letters for the chapter numbers of the appendices.
+%\appendix
+\begin{appendices}
+%  \input{Appendices/appendix-a}
+%  \input{Appendices/appendix-b}
+%  \input{Appendices/appendix-c}
+\end{appendices}
+
+%% default style = ou-report.
+%\bibliographystyle{ou-report}
+%\bibliographystyle{plain}
+% styles: apacite, abbrv, acm, alpha, apalike, ieeetr, plain, siam and unsrt.
+
+%plain --> \usepackage[style=numeric]{biblatex}
+%abbrv --> \usepackage[style=numeric,firstinits=true]{biblatex}
+%unsrt --> \usepackage[style=numeric,sorting=none]{biblatex}
+%alpha --> \usepackage[style=alphabetic]{biblatex}
+
+%\bibliography{report}
+\printbibheading[heading=bibintoc]
+\printbibliography[heading=subbibintoc, title={Books}, type=book]
+% After meeting with Harald Vranken, group the following two groups together into Academic Articles.
+%\printbibliography[heading=subbibintoc, title={Scientific Articles}, type=article]
+%\printbibliography[heading=subbibintoc, title={Conferences}, type=inproceedings]
+\printbibliography[heading=subbibintoc, title={Academic Articles}, keyword=article]
+\printbibliography[heading=subbibintoc, title={Technical Documentation},nottype=article, nottype=book, nottype=inproceedings, nottype=incollection]
+
+\glsaddall
+\printglossary[type=\acronymtype, style=mcolindex]
+\printglossary[title=Glossary]
+
+
+\end{document}

@@ -1,0 +1,37 @@
+\chapter{Samenvatting}
+\ifpdf
+    \graphicspath{{Summary/Figs/Raster/}{Summary/Figs/PDF/}{Summary/Figs/}}
+\else
+    \graphicspath{{Summary/Figs/Vector/}{Summary/Figs/}}
+\fi
+
+\begin{otherlanguage}{dutch}
+\glsreset{MLA}
+De populariteit van \glsfirst{p2p} toepassingen, en daarmee ook het P2P verkeer op het internet, is in de laatste jaren sterk toegenomen. 
+Deze toename is naast het gebruik van goedaardige P2P toepassingen ook te wijten aan kwaadaardige P2P toepassingen zoals P2P \glspl{botnet}. 
+Om de toenemende bedreigingen van P2P botnets te pareren, is actieve bestrijding ervan noodzakelijk. 
+Een eerste stap daarin is om te detecteren welk internetverkeer deel uitmaakt van P2P botnets. 
+In dit onderzoek is daarmee een start gemaakt door te kijken of internetverkeer geclassificeerd kan worden als P2P verkeer en niet-P2P verkeer, nog ongeacht of dat goed- of kwaadaardig verkeer betreft.\\
+
+\noindent
+Classificatie van P2P verkeer is uitdagend aangezien traditionele technieken, die hoofdzakelijk poortnummers of payload-informatie analyseren, ineffectief zijn tegen toepassingen die willekeurige poorten of encryptie gebruiken. 
+In het onderzoek is, op basis van literatuuronderzoek, \gls{ML} gebruikt als methode voor classificatie van P2P verkeer, waarbij de algoritmen J48, REPTree en AdaBoost gebruikt zijn voor analyse van statistische flow features die zowel poort- als payload agnostisch zijn.\\
+
+\noindent
+Het classificatie mechanisme leert P2P gedrag van een data set die bestaat uit zowel goedaardig P2P-verkeer, kwaadaardig P2P-botnet verkeer en niet-P2P verkeer.
+De nauwkeurigheid van de classifier op de daadwerkelijke test data bepaalt hoe effectief er onderscheid kan worden gemaakt tussen P2P en niet-P2P verkeer.
+De performance metrieken van de classifier zijn allen gebaseerd op het gebruik van test data sets, waarbij elke individuele set disjunct is met de overige sets(inclusief de training set).
+Uit de resultaten van dit kwantitatief empirisch onderzoek is gebleken dat hiermee een hoge nauwkeurigheid kan worden bereikt, die vergelijkbare bestaande benaderingen voor classificatie van P2P verkeer overtreft.\\
+
+
+\noindent
+De datasets en enkele broncodes die tijdens het onderzoek werden gebruikt zullen publiekelijk ter beschikking worden gesteld om bijvoorbeeld validatie of uitbreiding van dit werk mogelijk te maken.
+
+
+\end{otherlanguage}
+
+
+\vspace{2cm}
+
+\noindent
+\textbf{Trefwoord: P2P traffic, port agnostic, payload agnostic, classification, Machine learning}
